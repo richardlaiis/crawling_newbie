@@ -1,0 +1,12 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+url = 'https://adfs.ntu.edu.tw/adfs/ls/?SAMLRequest=fVJNj9owEL33V0S%2B58shW2QBEgVVRdq2CNIe9rIyzrBrybFTz6TQf18nQJvDLifLM%2B%2FNm3kzM5SNacWyo1e7g18dIEXnxlgUQ2LOOm%2BFk6hRWNkAClJiv%2Fz6KHiSidY7csoZNqLcZ0hE8KSdZdFmPWfPMCkm%2FIHLmJdTFU9K4PG0PvA4V9OinBYPh%2BxjxqKf4DFw5iyUCETEDjYWSVoKoYyXcZbHWVnlhSi5KPgTi9ZhDm0lDaxXohZFmsr6iImlLoG6S%2Bg0%2FFODKYuWt7ZWzmLXgN%2BD%2F60V%2FNg9%2Fqcr58yYbtyLtmk%2FM4u2Vyc%2BaVtr%2B3LfhMMFhOJLVW3j7fd9xRazvo4YRvOLXvENwR7CZ%2BkYObus71vQ2Ky3zmj1J%2FrsfCPp%2FRbyJB8iuo6PA1R0FltQ%2BqihDl4Y404rD5Jgzsh3wNKbzPVAoB7OJXhFcKZo5ZpWeo291XCWim7TjFErE1a%2Fg%2BPi7nUooXpcCG%2FDc3K%2B7o0FFSQrL0OXztPVgDeLX3LvNPovOz72xYe%2F&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=Kp4UwCQ9wpISOTcfoSC2ankQG3MC2ydSm7IWl9n%2BYaHl6DsEhrL%2FKv6QXr5YfgceJkNxRySeSha92ImAQJxPEaKpsgkhLKgiUHQ5b6gTgvV1IO0S8TYL1UO7rUCIPR%2BkQkUIhgbiLuywLItDadJCPVlm6JW6ohQVEFi9mMaL8GJHiGdqQG%2BEQdiYdVWg45yY7PnneYaeXTpv0bTkwxh%2Ftu3hCNImk3NzBDbGfpHo3PK9NZzq%2FZ4%2Bh2jpFERqsYgKBBZ%2FilhOICKZG3IGrfKJVtAHZHRrPkgs%2BmrweIvhNf1D82KuF%2B7vkSBIA4a685KdKmTB9ou%2Fpyp%2FLLT%2BUs6iyA%3D%3D'
+
+driver = webdriver.Firefox()
+driver.maximize_window()
+driver.get(url)
+
+driver.find_element(By.ID, 'ContentPlaceHolder1_UsernameTextBox').send_keys(username)
+driver.find_element(By.ID, 'ContentPlaceHolder1_PasswordTextBox').send_keys(password)
+driver.find_element(By.NAME, 'ctl00$ContentPlaceHolder1$SubmitButton').click()
